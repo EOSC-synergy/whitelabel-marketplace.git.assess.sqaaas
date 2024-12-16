@@ -1,0 +1,56 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/cyfronet-fid/whitelabel-marketplace:
+      branch: master
+      repo: https://github.com/cyfronet-fid/whitelabel-marketplace.git
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/cyfronet-fid/whitelabel-marketplace git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snazzy-azure-dachshund.sh
+        container: qc.acc_gimpy-sapphire-kangaroo
+  QC.Doc:
+    repos:
+      github.com/cyfronet-fid/whitelabel-marketplace find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.woozy-myrtle-dolphin.sh
+        container: qc.doc_shabby-buff-barracuda
+      github.com/cyfronet-fid/whitelabel-marketplace git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snoopy-periwinkle-russel.sh
+        container: qc.doc_tacky-crimson-horse
+      github.com/cyfronet-fid/whitelabel-marketplace markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.squirrely-razzmatazz-leopard.sh
+        container: qc.doc_wheezy-malachite-argentino
+  QC.Lic:
+    repos:
+      github.com/cyfronet-fid/whitelabel-marketplace licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.sloppy-malachite-lion.sh
+        container: qc.lic_scummy-lime-rottweiler
+  QC.Sty:
+    repos:
+      github.com/cyfronet-fid/whitelabel-marketplace jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.hazy-viridian-eleuth.sh
+        container: qc.sty_frumpy-white-lion
+      github.com/cyfronet-fid/whitelabel-marketplace rubocop:
+        commands:
+        - /usr/bin/env sh .sqa/script.goopy-thistle-tapir.sh
+        container: qc.sty_craggy-razzmatazz-axolotl
+  QC.Ver:
+    repos:
+      github.com/cyfronet-fid/whitelabel-marketplace get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.skimpy-lilac-pinscher.sh
+        container: qc.ver_stealthy-pumpkin-dachshund
+timeout: 5400
