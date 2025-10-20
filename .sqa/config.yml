@@ -5,7 +5,7 @@ config:
       branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/cyfronet-fid/whitelabel-marketplace:
-      branch: master
+      branch: development
       repo: https://github.com/cyfronet-fid/whitelabel-marketplace.git
 environment:
   JPL_DOCKERFORCEBUILD: enabled
@@ -15,42 +15,46 @@ sqa_criteria:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace git:
         commands:
-        - /usr/bin/env sh .sqa/script.snazzy-azure-dachshund.sh
-        container: qc.acc_gimpy-sapphire-kangaroo
+        - /usr/bin/env sh .sqa/script.nippy-crimson-turkey.sh
+        container: qc.acc_flabby-amethyst-bombay
   QC.Doc:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.woozy-myrtle-dolphin.sh
-        container: qc.doc_shabby-buff-barracuda
+        - /usr/bin/env sh .sqa/script.gloppy-teal-badger.sh
+        container: qc.doc_muzzy-red-macaque
       github.com/cyfronet-fid/whitelabel-marketplace git:
         commands:
-        - /usr/bin/env sh .sqa/script.snoopy-periwinkle-russel.sh
-        container: qc.doc_tacky-crimson-horse
+        - /usr/bin/env sh .sqa/script.scummy-indigo-whippet.sh
+        container: qc.doc_cloudy-firebrick-newt
       github.com/cyfronet-fid/whitelabel-marketplace markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.squirrely-razzmatazz-leopard.sh
-        container: qc.doc_wheezy-malachite-argentino
+        - /usr/bin/env sh .sqa/script.ready-olive-magpie.sh
+        container: qc.doc_skanky-harlequin-kingfisher
   QC.Lic:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.sloppy-malachite-lion.sh
-        container: qc.lic_scummy-lime-rottweiler
+        - /usr/bin/env sh .sqa/script.breezy-xanthic-chihuahua.sh
+        container: qc.lic_pretty-magnolia-giraffe
   QC.Sty:
     repos:
+      github.com/cyfronet-fid/whitelabel-marketplace hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.flabby-lavender-corgi.sh
+        container: qc.sty_snazzy-ultramarine-fousek
       github.com/cyfronet-fid/whitelabel-marketplace jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.hazy-viridian-eleuth.sh
-        container: qc.sty_frumpy-white-lion
+        - /usr/bin/env sh .sqa/script.trippy-olive-zebu.sh
+        container: qc.sty_gloppy-buff-dormouse
       github.com/cyfronet-fid/whitelabel-marketplace rubocop:
         commands:
-        - /usr/bin/env sh .sqa/script.goopy-thistle-tapir.sh
-        container: qc.sty_craggy-razzmatazz-axolotl
+        - /usr/bin/env sh .sqa/script.woozy-azure-slug.sh
+        container: qc.sty_zippy-maroon-gibbon
   QC.Ver:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.skimpy-lilac-pinscher.sh
-        container: qc.ver_stealthy-pumpkin-dachshund
+        - /usr/bin/env sh .sqa/script.scanty-azure-dog.sh
+        container: qc.ver_trippy-violet-maltese
 timeout: 5400
