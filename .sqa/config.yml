@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: main
+      branch: feature/pynblint_fix
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/cyfronet-fid/whitelabel-marketplace:
       branch: development
@@ -15,46 +15,46 @@ sqa_criteria:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace git:
         commands:
-        - /usr/bin/env sh .sqa/script.nippy-fuchsia-uguisu.sh
-        container: qc.acc_woolly-heliotrope-tang
+        - /usr/bin/env sh .sqa/script.frost_eccentric_flamingo.sh
+        container: qc.acc_silver_methodical_albatross
   QC.Doc:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.muzzy-flax-bordeaux.sh
-        container: qc.doc_geeky-sapphire-newfoundland
+        - /usr/bin/env sh .sqa/script.ice_responsible_seal.sh
+        container: qc.doc_banana_polite_cougar
       github.com/cyfronet-fid/whitelabel-marketplace git:
         commands:
-        - /usr/bin/env sh .sqa/script.boozy-seashell-barracuda.sh
-        container: qc.doc_cheeky-black-newt
+        - /usr/bin/env sh .sqa/script.rosewater_forgiving_bat.sh
+        container: qc.doc_cinnabar_friendly_jellyfish
       github.com/cyfronet-fid/whitelabel-marketplace markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.nerdy-silver-setter.sh
-        container: qc.doc_smelly-pink-havanese
+        - /usr/bin/env sh .sqa/script.thistle_humorous_orangutan.sh
+        container: qc.doc_umber_unique_albatross
   QC.Lic:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.craggy-periwinkle-fish.sh
-        container: qc.lic_crappy-mustard-zebra
+        - /usr/bin/env sh .sqa/script.dawn_organized_spider.sh
+        container: qc.lic_ultramarine_calm_opossum
   QC.Sty:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-tomato-bee.sh
-        container: qc.sty_greasy-brown-sheepdog
+        - /usr/bin/env sh .sqa/script.ultramarine_melancholy_chimpanzee.sh
+        container: qc.sty_storm_happy_boar
       github.com/cyfronet-fid/whitelabel-marketplace jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.pasty-cobalt-gerbil.sh
-        container: qc.sty_slimy-sepia-quetzal
+        - /usr/bin/env sh .sqa/script.fog_mindful_spider.sh
+        container: qc.sty_tan_carefree_lemur
       github.com/cyfronet-fid/whitelabel-marketplace rubocop:
         commands:
-        - /usr/bin/env sh .sqa/script.dorky-beige-fossa.sh
-        container: qc.sty_gummy-chestnut-terrier
+        - /usr/bin/env sh .sqa/script.navy_romantic_angelfish.sh
+        container: qc.sty_orange_witty_boar
   QC.Ver:
     repos:
       github.com/cyfronet-fid/whitelabel-marketplace get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.cloudy-cobalt-lobster.sh
-        container: qc.ver_stinky-taupe-harrier
+        - /usr/bin/env sh .sqa/script.raven_helpful_cougar.sh
+        container: qc.ver_gamboge_tranquil_elephant
 timeout: 5400
